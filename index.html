@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lazy Loader</title>
+	<link rel="stylesheet" href="./assets/styles/normalize.css">
+	<link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+<body>
+
+	<style>
+
+		.image-loaded { background-image: url(./assets/images/inntel-house-full.jpg); }
+
+		@media only screen and (max-width: 1920px) {
+			.easy-loader.image-loaded { background-image: url(./assets/images/inntel-house-desktop.jpg); }
+		}
+		@media only screen and (max-width: 1024px) {
+			.easy-loader.image-loaded { background-image: url(./assets/images/inntel-house-laptop.jpg); }
+		}
+		@media only screen and (max-width: 768px) {
+			.easy-loader.image-loaded { background-image: url(./assets/images/inntel-house-tablet.jpg); }
+		}
+		@media only screen and (max-width: 425px) {
+			.easy-loader.image-loaded { background-image: url(./assets/images/inntel-house-mobile.jpg); }
+		}
+
+		/*Limit browser handling via Sass @supports*/
+
+	    .easy-loader { transform: translateZ(0); }
+	    .easy-loader.image-loaded { animation: sharpen .5s both;  }
+
+	    @keyframes sharpen {
+	      from { filter: blur(20px); }
+	      to { filter: blur(0); }
+	    }
+
+	</style>
+
+	<div class="easy-loader"></div>
+
+	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./assets/javascript/easy-loader.js"></script>
+	
+</body>
+</html>

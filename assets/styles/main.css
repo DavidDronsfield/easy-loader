@@ -1,0 +1,98 @@
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html { font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-family: 'PT Sans', sans-serif;
+  line-height: 1.375;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+}
+
+svg { height: auto; }
+
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+ol {
+  padding-left: 30px;
+}
+
+li {
+  line-height: 1.5;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+pre {
+  margin-bottom: 2.5rem; }
+
+figure { margin: 0; }
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  display: none;
+  color: $light;
+  margin-bottom: 10px;
+}
+
+blockquote { margin: 0 }
+
+
+/* Clearfix
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+
+
+
+
+
+.easy-loader {
+  height: 100vh;
+  width: 100%;
+  background-image: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMLaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzEzOCA3OS4xNTk4MjQsIDIwMTYvMDkvMTQtMDE6MDk6MDEgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI2N0ZCRUVCODI3ODExRTc4MEREREVCRUE5RURFOTFFIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI2N0ZCRUVBODI3ODExRTc4MEREREVCRUE5RURFOTFFIiB4bXA6Q3JlYXRvclRvb2w9Ikc5MzVGWFhVMURRQzQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0iQ0E1QjYwRTNCNDZDODVCOUI5QThGRkM3NzNFNUMwOUMiIHN0UmVmOmRvY3VtZW50SUQ9IkNBNUI2MEUzQjQ2Qzg1QjlCOUE4RkZDNzczRTVDMDlDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+0ASFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAPHAFaAAMbJUccAgAAAgACADhCSU0EJQAAAAAAEPzhH4nIt8l4LzRiNAdYd+v/7gAOQWRvYmUAZMAAAAAB/9sAhAAGBAQEBQQGBQUGCQYFBgkLCAYGCAsMCgoLCgoMEAwMDAwMDBAMDg8QDw4MExMUFBMTHBsbGxwfHx8fHx8fHx8fAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAAeACgDAREAAhEBAxEB/8QAhAAAAgMBAAAAAAAAAAAAAAAABAUDBgcCAQACAgMAAAAAAAAAAAAAAAABAgMEAAUGEAACAQIEBQMDBQAAAAAAAAABAgMRBAAhEgUxQVEiBqETB2GBFXGRQlIjEQACAQMDAgILAAAAAAAAAAAAAQIRIQMxEwRBEvBRcYGRobHRIjJSFAX/2gAMAwEAAhEDEQA/AHH4NyvaARjr9w5XtZzHtXeQtKrkwGdP1pgbqfUyjQSduiji1uyadQUjUAan6HFfLyYx1J4Ymxpb+OigYpUMKqVZSCOuEedPRkscL6jBNhNKIKj+tK4ieUmWIofknyZbR2i2+zWSjdNUgukmy9lYwO5TUK1SefDpijL+g5Raj9Ml5kuPiRV5KqKVt/me82kySw3AhuL+dYp3fSxVCe5qMP2P3xpeJnnufc7lxYoPVKxAN/uprvXLcZDJ9baasa9APXjiPlWk6BlNy16Fv+P4t13Dyqygsbh4pBqaaVu6kKLqeq5gg8KYk4eZ+tEkZJx7WjS9s+QvG5rgWc3uWN0SUf3B/lrDaaahXI8icbGPOhKXa7Mr7VNDIdx+MtqvbqS4bebuNpBmtI2UClMtQry5nGthysaVE0W9teYJcfEkJVPx9/HGUA7pI5ZMx/IAS5HCRyR/Je4bsCLT45vIGmeS8s5XliSLW0DkgIwYHvZs8uIocPJOXUaMaDnZdu8o2KSSXbd1t4ZZozDK3tMaxkglRUmlaDhgKMlpYXbQM+z1uJb3etziMxKCIwxmNdKggiQlu7jUYfbb1v8AEzsSDYixlzBD058fXHMWEVCU++Gqp1HpmBT7YNg0CImvtBJRgOlRgqtbVGVQWd7qjAoCeoIri9h/Y6V8ekNxS5B1GQTBeagvT1qMXoz5C1Sfs+YKs//Z');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
